@@ -5,7 +5,9 @@ import 'package:scr3/list_view_2nd_file.dart';
 // import 'package:screens/list_view_2nd_file.dart';
 
 void main()=>
-    runApp(const MaterialApp(debugShowCheckedModeBanner: false,
+    runApp(const MaterialApp(
+      debugShowCheckedModeBanner: false,
+
 
       home: Screen2(),
 

@@ -48,7 +48,7 @@ class Screen2 extends StatelessWidget {
                   Listimga("assets/images/pexels-stephan-seeber-1054218.jpg",context),
                   Listimga("assets/images/nsplsh_59386c436f545267485045~mv2_d_6000_4000_s_4_2.webp",context),
                   Listimga("assets/images/3rd.jpg",context),
-                  Listimga("assets/images/new5th.jpg",context)
+                  Listimga("assets/images/colorful-mountains-night-minimal-4k_1630531611.jpg.webp",context)
 
 
                 ],),
