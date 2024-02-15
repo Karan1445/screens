@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'after_on_click_list.dart';
-void main()=>
-    runApp(MaterialApp(debugShowCheckedModeBanner: false,
+import 'package:screens/list_view_2nd_file.dart';
 
-      home: Screen3(),
+void main()=>
+    runApp(const MaterialApp(debugShowCheckedModeBanner: false,
+
+      home: Screen2(),
 
     )
     );

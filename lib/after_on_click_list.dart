@@ -11,7 +11,7 @@ class Screen3 extends StatelessWidget {
         backgroundColor: Colors.transparent,
         actions: const [],
         title: Container(
-          margin: EdgeInsets.only(left: 10, right: 10),
+          margin: const EdgeInsets.only(left: 10, right: 10),
           child: Row(
             children: [
               Image.asset(
@@ -36,7 +36,7 @@ class Screen3 extends StatelessWidget {
             width: double.infinity,
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(23, 111, 23, 0),
+            margin: const EdgeInsets.fromLTRB(23, 111, 23, 0),
             child: const Column(
               children: [
                 Column(
@@ -64,7 +64,7 @@ class Screen3 extends StatelessWidget {
               ],
             ),
           ),
-          Container(alignment: Alignment.center,margin: EdgeInsets.only(bottom: 60),
+          Container(alignment: Alignment.center,margin: const EdgeInsets.only(bottom: 60),
             child: Column(mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.max,
               children: [
