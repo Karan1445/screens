@@ -44,11 +44,11 @@ class Screen2 extends StatelessWidget {
               Expanded(
                 child: ListView(children: [
 
-                  Listimga("assets/images/maybe.jpg"),
-                  Listimga("assets/images/pexels-stephan-seeber-1054218.jpg"),
-                  Listimga("assets/images/nsplsh_59386c436f545267485045~mv2_d_6000_4000_s_4_2.webp"),
-                  Listimga("assets/images/3rd.jpg"),
-                  Listimga("assets/images/night_mon.jpg")
+                  Listimga("assets/images/maybe.jpg",context),
+                  Listimga("assets/images/pexels-stephan-seeber-1054218.jpg",context),
+                  Listimga("assets/images/nsplsh_59386c436f545267485045~mv2_d_6000_4000_s_4_2.webp",context),
+                  Listimga("assets/images/3rd.jpg",context),
+                  Listimga("assets/images/colorful-mountains-night-minimal-4k_1630531611.jpg.webp",context)
 
 
                 ],),
@@ -84,7 +84,7 @@ class Screen2 extends StatelessWidget {
         );
   }
 
-  GestureDetector Listimga(String img) {
+  GestureDetector Listimga(String img,BuildContext context) {
     return GestureDetector(onTap: (){},
       child: Container(margin: const EdgeInsets.fromLTRB(25, 25, 23, 10),
                 child: Stack(
@@ -95,7 +95,7 @@ class Screen2 extends StatelessWidget {
                         borderRadius: BorderRadius.circular(19) // Adjust the radius as needed
                     ),
                         child: Image.asset(img,
-                          fit: BoxFit.cover,height: 130,width: 500,)),
+                          fit: BoxFit.cover,height: 130,width: MediaQuery.of(context).size.width,)),
 
 
 
