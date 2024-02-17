@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Screen3 extends StatelessWidget {
-  const Screen3({super.key});
+  final String Path;
+  const Screen3({super.key,required this.Path});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        excludeHeaderSemantics: false,
         backgroundColor: Colors.transparent,
         actions: const [],
         title: Container(
@@ -30,7 +33,7 @@ class Screen3 extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            "assets/images/nsplsh_59386c436f545267485045~mv2_d_6000_4000_s_4_2.webp",
+            Path,
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
@@ -69,8 +72,9 @@ class Screen3 extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {Navigator.pop(context);},
                   style: ButtonStyle(
+                    shape: MaterialStateProperty.all(CircleBorder()),
                       backgroundColor: MaterialStateProperty.all(Colors.transparent),
                       elevation: MaterialStateProperty.all(0)),
                   child: CircleAvatar(

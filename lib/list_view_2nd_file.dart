@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:scr3/after_on_click_list.dart';
 
-class Screen2 extends StatelessWidget {
-  const Screen2({super.key});
+class Screen2 extends StatefulWidget {
+   const Screen2({super.key});
+
+  @override
+  State<Screen2> createState() => _Screen2State();
+}
+
+class _Screen2State extends State<Screen2> {
+  final List img_list=[
+   Imgs(img:"assets/images/colorful-mountains-night-minimal-4k_1630531611.jpg.webp" ),
+    Imgs(img: "assets/images/maybe.jpg"),
+    Imgs(img: "assets/images/pexels-stephan-seeber-1054218.jpg"),
+    Imgs(img:"assets/images/nsplsh_59386c436f545267485045~mv2_d_6000_4000_s_4_2.webp"),
+  Imgs(img:"assets/images/3rd.jpg")
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -42,34 +56,34 @@ class Screen2 extends StatelessWidget {
                         fontSize: 24),
                   )),
               Expanded(
-                child: ListView(children: [
-
-                  Listimga("assets/images/maybe.jpg",context),
-                  Listimga("assets/images/pexels-stephan-seeber-1054218.jpg",context),
-                  Listimga("assets/images/nsplsh_59386c436f545267485045~mv2_d_6000_4000_s_4_2.webp",context),
-                  Listimga("assets/images/3rd.jpg",context),
-                  Listimga("assets/images/colorful-mountains-night-minimal-4k_1630531611.jpg.webp",context)
-
-
-                ],),
+                child: ListView.builder(
+                  itemCount: img_list.length,
+                    itemBuilder:(context,index){
+                      final path=img_list[index];
+                      return Container(child: Listimga(img_list[index].img, context,path.img as String));
+                    },
+                )
               ),
 
             ],
           ),
-          bottomButton(),
+          bottomButton(context),
         ],
       ),
     );
   }
 
-  Container bottomButton() {
+  Container bottomButton(context) {
     return Container(alignment: Alignment.center,margin: const EdgeInsets.only(bottom: 30),
           child: Column(mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.max,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>const Screen3(Path:"assets/images/maybe.jpg")));
+                },
                 style: ButtonStyle(
+                    shape: MaterialStateProperty.all(CircleBorder()),
                     backgroundColor: MaterialStateProperty.all(Colors.transparent),
                     elevation: MaterialStateProperty.all(0)),
                 child: CircleAvatar(
@@ -84,8 +98,11 @@ class Screen2 extends StatelessWidget {
         );
   }
 
-  GestureDetector Listimga(String img,BuildContext context) {
-    return GestureDetector(onTap: (){},
+  GestureDetector Listimga(String img,BuildContext context, String img_ps) {
+    return GestureDetector(onTap: (){
+      print(img_ps);
+      Navigator.push(context,MaterialPageRoute(builder: (context)=>Screen3(Path:img_ps)));
+    },
       child: Container(margin: const EdgeInsets.fromLTRB(25, 25, 23, 10),
                 child: Stack(
                   children: [
@@ -131,4 +148,8 @@ class Screen2 extends StatelessWidget {
               ),
     );
   }
+}
+class Imgs{
+  String img;
+   Imgs({required this.img});
 }
