@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scr3/after_on_click_list.dart';
 
+import 'home.dart';
+
 class Screen2 extends StatefulWidget {
    const Screen2({super.key});
 
@@ -10,11 +12,11 @@ class Screen2 extends StatefulWidget {
 
 class _Screen2State extends State<Screen2> {
   final List img_list=[
-   Imgs(img:"assets/images/colorful-mountains-night-minimal-4k_1630531611.jpg.webp" ),
-    Imgs(img: "assets/images/maybe.jpg"),
+   Imgs(img:"assets/images/screen2_new4.jpg" ),
+    Imgs(img: "assets/images/screen2_new8.jpg"),
     Imgs(img: "assets/images/pexels-stephan-seeber-1054218.jpg"),
     Imgs(img:"assets/images/nsplsh_59386c436f545267485045~mv2_d_6000_4000_s_4_2.webp"),
-  Imgs(img:"assets/images/3rd.jpg")
+  Imgs(img:"assets/images/screen2_new6.webp")
   ];
 
   @override
@@ -22,6 +24,7 @@ class _Screen2State extends State<Screen2> {
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         actions: const [],
         title: Container(
@@ -81,6 +84,9 @@ class _Screen2State extends State<Screen2> {
               ElevatedButton(
                 onPressed: () {
                 Navigator.push(context,MaterialPageRoute(builder: (context)=>const Screen3(Path:"assets/images/maybe.jpg")));
+                },
+                onLongPress: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const Home()));
                 },
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(CircleBorder()),
